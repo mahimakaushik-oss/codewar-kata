@@ -8,9 +8,16 @@
 # spinWords("This is a test") => "This is a test" 
 # spinWords("This is another test") => "This is rehtona test"
 
-def get_word(word: str) -> str:
-    size = len(word)
-    return word if size < 5 else word[::-1]
-
-def spin_words(sentence: str) -> str:
-    return ' '.join([get_word(x) for x in sentence.split(" ")])
+defmodule Spin do
+  def get_word(word) do
+    if String.length(word) > 4 do
+      String.reverse(word)
+    else
+      word
+    end
+  end
+  
+  def spin_words(sentence) do
+    Enum.join((for x <- String.split(sentence), do: get_word(x))," ")
+  end
+end

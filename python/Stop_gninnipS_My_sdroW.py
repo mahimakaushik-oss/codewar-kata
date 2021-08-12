@@ -14,8 +14,6 @@ spinWords("This is another test") => "This is rehtona test"
 def get_word(word: str) -> str:
     size = len(word)
     return word if size < 5 else word[::-1]
- 
+
 def spin_words(sentence: str) -> str:
     return ' '.join([get_word(x) for x in sentence.split(" ")])
-  
-print(spin_words("hello worlds!"))
