@@ -5,6 +5,7 @@ is_isogram("Dermatoglyphics" ) == true
 is_isogram("aba" ) == false
 is_isogram("moOse" ) == false # -- ignore letter case
 '''
+#this is isogram file
 def is_isogram(string):
     string = string.lower()
     for i in range(len(string)):
